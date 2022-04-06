@@ -48,6 +48,17 @@ body {
     flex: 5;
 }
 
+.panel.active::before {
+    background: linear-gradient(rgba(0, 0, 0, .6),  rgba(0, 0, 0, .6));
+    border-radius: 50px;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
 .panel.active h3 {
     opacity: 1;
     transition: opacity 0.3s ease-in 0.4s;
