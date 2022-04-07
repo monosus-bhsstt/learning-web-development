@@ -74,6 +74,10 @@ body {
   border-color: var(--line-border-fill);
 }
 
+.circle.active.current {
+  border-color: yellow;
+}
+
 .btn {
   background-color: var(--line-border-fill);
   color: #fff;
