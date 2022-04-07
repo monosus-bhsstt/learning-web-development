@@ -18,8 +18,9 @@ function blurring() {
   //オブジェクト.innerText:オブジェクト内の文字列を右辺のものに変える
   loadText.innerText = `${load}%`;
   //オブジェクト.style.プロパティ:オブジェクトのstyle属性であるプロパティの値を右辺のものに変える
+  //右辺のscaleは下で配列とreturnを宣言しているのでそこに当てはめる（loadが大きくなるにつれてopacityの値が1→0の間で小さくなる＝だんだん透明になる効果）
   loadText.style.opacity = scale(load, 0, 100, 1, 0);
-
+  //filterというプロパティのblurという関数は対象の要素をぼやけさせる。px単位で数が大きいほどぼやけも大きい（loadが大きくなるにつれてblurの値が30→0の間で小さくなる=だんだんはっきりする効果）
   bg.style.filter = `blur(${scale(load, 0, 100, 30, 0)}px)`;
 }
 
