@@ -17,14 +17,21 @@ function blurring() {
 
   //オブジェクト.innerText:オブジェクト内の文字列を右辺のものに変える
   loadText.innerText = `${load}%`;
+
+  /**
+   * プロパティの値を出すために使用
+   * @see scale
+   * @see {@link https://stackoverflow.com/questions/10756313/javascript-jquery-map-a-range-of-numbers-to-another-range-of-numbers @use JSDoc：@see}
+  */
+
   //オブジェクト.style.プロパティ:オブジェクトのstyle属性であるプロパティの値を右辺のものに変える
   //右辺のscaleは下で配列とreturnを宣言しているのでそこに当てはめる（loadが大きくなるにつれてopacityの値が1→0の間で小さくなる＝だんだん透明になる効果）
   loadText.style.opacity = scale(load, 0, 100, 1, 0);
+
   //filterというプロパティのblurという関数は対象の要素をぼやけさせる。px単位で数が大きいほどぼやけも大きい（loadが大きくなるにつれてblurの値が30→0の間で小さくなる=だんだんはっきりする効果）
   bg.style.filter = `blur(${scale(load, 0, 100, 30, 0)}px)`;
 }
 
-// https://stackoverflow.com/questions/10756313/javascript-jquery-map-a-range-of-numbers-to-another-range-of-numbers
 const scale = (num, in_min, in_max, out_min, out_max) => {
   return ((num - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min;
 };
