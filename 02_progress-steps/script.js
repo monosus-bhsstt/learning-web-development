@@ -8,7 +8,8 @@ let currentActive = 1
 
 //.circleに.activeを付与剥奪する動作の宣言。
 const circleAddActive = function () {
-    circles.forEach((circle, idx) => {
+    //circlesのままだと配列ではないのでArray.prototype.slice.call(circles)で配列として呼び出す。
+    Array.prototype.slice.call(circles).map((circle, idx) => {
         //対象の.classの配列のインデックス数値が変数"currentActive"よりも小さかったら、対象の.classにclass名activeを加えて、そうでなかったらactiveを取り除く
         if(idx < currentActive) {
             circle.classList.add('active')
@@ -16,7 +17,6 @@ const circleAddActive = function () {
             circle.classList.remove('active')
         }
     })
-    
 }
 
 //#progressのwidthの設定の宣言
