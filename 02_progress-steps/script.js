@@ -19,6 +19,13 @@ const circleAddActive = function () {
     
 }
 
+//#progressのwidthの設定の宣言
+const progressWidth = function () {
+const actives = document.querySelectorAll('.active')
+//上で宣言した定数"progress"のwidthに、(.activeの数-1)÷(.circleの数-1)×100[単位：%]の値を代入。※activeの値はクリックすると変動する。※-1しているのは.progressのwidthの0からとするため(.activeは初めから付与されているものが1つある)
+progress.style.width = (actives.length - 1) / (circles.length - 1) * 100 + '%'
+}
+
 //#nextをクリックしたら{}内の関数を実行
 next.addEventListener('click', () => {
     //2度目以降は1ずつ増やしていく
@@ -32,11 +39,8 @@ next.addEventListener('click', () => {
     //.circleに.activeの付与剥奪の動作
     circleAddActive()
 
-    const actives = document.querySelectorAll('.active')
-
     //#progressのwidthの設定
-    //上で宣言した定数"progress"のwidthに、(.activeの数-1)÷(.circleの数-1)×100[単位：%]の値を代入。※activeの値はクリックすると変動する。※-1しているのは.progressのwidthの0からとするため(.activeは初めから付与されているものが1つある)
-    progress.style.width = (actives.length - 1) / (circles.length - 1) * 100 + '%'
+    progressWidth()
 
     //#prevと#nextのアクティブ化の条件式
     //変数"currentActive"が、1(最初の状態)だった場合#prevのアクティブ化を無効にし、.circleの数(4)と同じだった場合#nextのアクティブ化を無効にし、それ以外の場合は#prevも#nextもアクティブ化を有効とする(無効を偽とする)。
@@ -63,10 +67,8 @@ prev.addEventListener('click', () => {
     //.circleに.activeの付与剥奪の動作
     circleAddActive()
 
-    const actives = document.querySelectorAll('.active')
-
     //#progressのwidthの設定
-    progress.style.width = (actives.length - 1) / (circles.length - 1) * 100 + '%'
+    progressWidth()
 
     //#prevと#nextのアクティブ化の条件式
     if(currentActive === 1) {
