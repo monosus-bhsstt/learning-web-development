@@ -6,6 +6,19 @@ const circles = document.querySelectorAll('.circle')
 //変数の値を宣言。1を代入。
 let currentActive = 1
 
+//.circleに.activeを付与剥奪する動作の宣言。
+const circleAddActive = function () {
+    circles.forEach((circle, idx) => {
+        //対象の.classの配列のインデックス数値が変数"currentActive"よりも小さかったら、対象の.classにclass名activeを加えて、そうでなかったらactiveを取り除く
+        if(idx < currentActive) {
+            circle.classList.add('active')
+        } else {
+            circle.classList.remove('active')
+        }
+    })
+    
+}
+
 //#nextをクリックしたら{}内の関数を実行
 next.addEventListener('click', () => {
     //2度目以降は1ずつ増やしていく
@@ -16,15 +29,8 @@ next.addEventListener('click', () => {
         currentActive = circles.length
     }
 
-    //.activeの付与の動作
-    circles.forEach((circle, idx) => {
-        //対象の.classの配列のインデックス数値が変数"currentActive"よりも小さかったら、対象の.classにclass名activeを加えて、そうでなかったらactiveを取り除く
-        if(idx < currentActive) {
-            circle.classList.add('active')
-        } else {
-            circle.classList.remove('active')
-        }
-    })
+    //.circleに.activeの付与剥奪の動作
+    circleAddActive()
 
     const actives = document.querySelectorAll('.active')
 
@@ -54,14 +60,8 @@ prev.addEventListener('click', () => {
         currentActive = 1
     }
     
-    //.activeの付与の動作
-    circles.forEach((circle, idx) => {
-        if(idx < currentActive) {
-            circle.classList.add('active')
-        } else {
-            circle.classList.remove('active')
-        }
-    })
+    //.circleに.activeの付与剥奪の動作
+    circleAddActive()
 
     const actives = document.querySelectorAll('.active')
 
