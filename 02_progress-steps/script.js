@@ -27,7 +27,7 @@ progress.style.width = (actives.length - 1) / (circles.length - 1) * 100 + '%'
 }
 
 //#prevと#nextのアクティブ化の条件式の宣言
-const btnDisabled = function () {
+const isDisabled = function () {
     //変数"currentActive"が、1(最初の状態)だった場合#prevのアクティブ化を無効にし、.circleの数(4)と同じだった場合#nextのアクティブ化を無効にし、それ以外の場合は#prevも#nextもアクティブ化を有効とする(無効を偽とする)。
     if(currentActive === 1) {
         prev.disabled = true
