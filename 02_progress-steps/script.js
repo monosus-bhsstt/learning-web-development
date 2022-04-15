@@ -50,7 +50,7 @@ next.addEventListener('click', () => {
     }
 
     //.circleに.activeの付与剥奪の動作
-    circleAddActive()
+isCircleAddActive()
 
     //#progressのwidthの設定
     progressWidth()
