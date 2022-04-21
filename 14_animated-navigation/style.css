@@ -6,6 +6,7 @@
 
 body {
   background-color: #eafbff;
+  /*下に向かうグラデーションで、上の0~50%までは#eafbffのグラデ（同色なのでベタ塗り）、50~100%は#eafbffのグラデ（同色なのでベタ塗り）*/
   background-image: linear-gradient(
     to bottom,
     #eafbff 0%,
@@ -30,6 +31,18 @@ nav {
   justify-content: center;
   border-radius: 3px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  /*
+    まとめて書いた場合
+    transition: 対象のプロパティ かかる時間 速度
+    一行ずつ書いた場合
+    transition-property: 対象のプロパティ
+    transition-duration: かかる時間
+    transition-timing-function: 速度
+
+    ※transitionは:hoverや:activeなどのトリガーが必要
+    今回はnav.activeに向けての変化の指定
+    widthを0.6秒かけて一定の速度(linear)で80px⇄350pxへと変化させる
+  */
   transition: width 0.6s linear;
   overflow-x: hidden;
 }
@@ -44,6 +57,7 @@ nav ul {
   padding: 0;
   margin: 0;
   width: 0;
+  /*nav ulのwidthを0.6秒かけて一定の速度で0⇆100%へと変化させる*/
   transition: width 0.6s linear;
 }
 
@@ -54,6 +68,7 @@ nav.active ul {
 nav ul li {
   transform: rotateY(0deg);
   opacity: 0;
+  /*nav ul liのtransformを0.6秒かけて一定の速度でY軸をもとに0度⇄360度へと回転させる。また、透明度を0.6秒かけて一定の速度で0⇄1へと変化させる。*/
   transition: transform 0.6s linear, opacity 0.6s linear;
 }
 
@@ -90,6 +105,10 @@ nav ul a {
   position: absolute;
   top: 10px;
   left: 5px;
+  /*.lineのtransformを0.6秒かけて一定の速度で下記の通り変化させる。
+  rotateで765度回転させて、横棒2本⇄×印へ。
+  translateYで上下に5.5px。
+  */
   transition: transform 0.6s linear;
 }
 
@@ -99,6 +118,7 @@ nav ul a {
 }
 
 nav.active .icon .line1 {
+  /*translateY:上に5.5px*/
   transform: rotate(-765deg) translateY(5.5px);
 }
 
