@@ -4,15 +4,24 @@
   box-sizing: border-box;
 }
 
+:root {
+  --main-bg-color01: #eafbff;
+  --main-bg-color02: #5290f9;
+  --nav-color: #000;
+  --nav-bg-color: #fff;
+  --icon-bg-color: #fff;
+  --icon-line-color: #5290f9;
+}
+
 body {
   background-color: #eafbff;
   /*下に向かうグラデーションで、上の0~50%までは#eafbffのグラデ（同色なのでベタ塗り）、50~100%は#eafbffのグラデ（同色なのでベタ塗り）*/
   background-image: linear-gradient(
     to bottom,
-    #eafbff 0%,
-    #eafbff 50%,
-    #5290f9 50%,
-    #5290f9 100%
+    var(--main-bg-color01) 0%,
+    var(--main-bg-color01) 50%,
+    var(--main-bg-color02) 50%,
+    var(--main-bg-color02) 100%
   );
   font-family: 'Muli', sans-serif;
   display: flex;
@@ -23,7 +32,7 @@ body {
 }
 
 nav {
-  background-color: #fff;
+  background-color: var(--nav-bg-color);
   padding: 20px;
   width: 80px;
   display: flex;
@@ -79,13 +88,13 @@ nav.active ul li {
 
 nav ul a {
   position: relative;
-  color: #000;
+  color: var(--nav-color);
   text-decoration: none;
   margin: 0 10px;
 }
 
 .icon {
-  background-color: #fff;
+  background-color: var(--icon-bg-color);
   border: 0;
   cursor: pointer;
   padding: 0;
@@ -99,7 +108,7 @@ nav ul a {
 }
 
 .icon .line {
-  background-color: #5290f9;
+  background-color: var(--icon-line-color);
   height: 2px;
   width: 20px;
   position: absolute;
