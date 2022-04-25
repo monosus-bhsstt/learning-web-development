@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="/style.css"> -->
+  <title>チェックアウト</title>
+</head>
+<body>
+  <div class="contents">
+    <h2>チェックアウト</h2>
+    <div class="cp-products">
+
+      <div class="product bag_vintage">
+        <div class="product-img">
+          <img src="assets/bag_vintage.png" alt="">
+        </div><!-- /product-img -->
+        <div class="product-info">
+          <span class="product-ttl">ヴィンテージ カバン</span>
+          <div class="wrappper-product-price">
+            <div class="product-price-current">
+              <span class="product-price">5400</span>
+              <span class="price-unit">円</span>
+            </div><!-- /product-price-current -->
+            <div class="product-price-bf-dc">
+              <span class="product-price">12800</span>
+              <span class="price-unit">円</span>
+            </div><!-- /product-price-bf-dc -->
+          </div><!-- /product-info -->
+          <div class="wrapper-product-qty">
+            <a class="btn-product-minus" href="">ー</a>
+            <div class="product-qty">1</div>
+            <a class="btn-product-plus" href="">＋</a>
+          </div><!-- /wrapper-product-qty -->
+        </div><!-- /product-info -->
+      </div><!-- /product bag_vintage -->
+
+      <div class="product shoes-levi">
+        <div class="product-img">
+          <img src="assets/shoes_levi.png" alt="">
+        </div><!-- /product-img -->
+        <div class="product-info">
+          <span class="product-ttl">Levi シューズ</span>
+          <div class="wrappper-product-price">
+            <div class="product-price-current">
+              <span class="product-price">7400</span>
+              <span class="price-unit">円</span>
+            </div><!-- /product-price-current -->
+            <div class="product-price-bf-dc">
+              <span class="product-price">16800</span>
+              <span class="price-unit">円</span>
+            </div><!-- /product-price-bf-dc -->
+          </div><!-- /product-info -->
+          <div class="wrapper-product-qty">
+            <a class="btn-product-minus" href="">ー</a>
+            <div class="product-qty">1</div>
+            <a class="btn-product-plus" href="">＋</a>
+          </div><!-- /wrapper-product-qty -->
+        </div><!-- /product-info -->
+      </div><!-- /product shoes-levi -->
+
+      <div class="wrapper-total-price">
+
+        <div class="delivery-charge">
+          <span class="item">配送料</span>
+          <span class="sep">:</span>
+          <div class="wrapper-price">
+            <span class="price">500</span>
+            <span class="unit">円</span>
+          </div><!-- /wrapper-price -->
+        </div><!-- /delivery-charge -->
+
+        <div class="price-tax-inc">
+          <span class="item">小計（税込）</span>
+          <span class="sep">:</span>
+          <div class="wrapper-price">
+            <span class="price">12800</span>
+            <span class="unit">円</span>
+          </div><!-- /wrapper-price -->
+        </div><!-- /price-tax-inc -->
+
+      </div><!-- /wrapper-total-price -->
+
+    </div><!-- /cp-products -->
+
+    <div class="wrapper-cp-pii">
+      <div class="cp-pii-contact">
+        <h3>個人情報</h3>
+        <form id="piiContact">
+          <div class="pii-mail">
+            <label for="email">メールアドレス</label>
+            <input type="email" name="email" id="email" placeholder="メールアドレスを入力してください" style="ime-mode:disabled;
+  " required>
+          </div><!-- /pii-mail-->
+          <div class="pii-tel">
+            <label for="tel">電話番号</label>
+            <input type="tel" name="tel" id="tel" placeholder="電話番号を入力してください" style="ime-mode:disabled;
+  " required>
+          </div><!-- /pii-tel -->
+          <button >変更する</button>
+        </form>
+      </div><!-- /cp-pii-contact -->
+
+      <div class="cp-pii-address">
+        <h3>住所情報</h3>
+        <form id="cpPiiAddress">
+          <div class="pii-name">
+            <label for="name">氏名</label>
+            <input type="text" name="name" id="name" placeholder="冨田 健治" style="ime-mode:disabled;
+  " required>
+          </div><!-- /pii-name-->
+          <div class="pii-address">
+            <label for="text">住所</label>
+            <input type="text" name="address" id="address" placeholder="住所を入力してください" style="ime-mode:disabled;
+  " required>
+          </div><!-- /pii-address -->
+          <div class="pii-address-checkbox">
+            <input type="checkbox" name="save" id="save">
+            <label for="">住所情報を保存する</label>
+          </div><!-- /pii-address-checkbox -->
+          <button >登録する</button>
+        </form>
+      </div><!-- /cp-pii-address -->
+
+    </div><!-- /wrapper-cp-pii -->
+
+  </div><!-- /contents -->
+
+  <script src="/script.js"></script>
+</body>
+</html>
